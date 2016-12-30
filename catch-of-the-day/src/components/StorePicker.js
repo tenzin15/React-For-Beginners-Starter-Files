@@ -2,7 +2,7 @@
 import React from 'react';
 import { getFunName } from '../helpers.js'
 
- class StorePicker extends React.Component {
+class StorePicker extends React.Component {
 //   constructor() {
 //     super();
 //     this.goToStore = this.goToStore.bind(this);
@@ -12,12 +12,14 @@ import { getFunName } from '../helpers.js'
     event.preventDefault();
     console.log('You Changed the URL');
     // first grab the text from the box
-    console.log(this.storeInput.value);
+    const storeId = this.storeInput.value;
+    console.log(`Going to ${storeId}`);
     // second we're going to transition from / to / store/ :stored
+    this.context.router.transitionTo(`/store/${storeId}`);
   }
 
   render() {
-    // Any where else
+    // Any where 1else
     return (
       /* Hello, I'm a JS comment */
       <form className="store-selector" onSubmit={(e) => this.goToStore(e)}>
@@ -30,4 +32,9 @@ import { getFunName } from '../helpers.js'
   }
 }
 
+StorePicker.contextTypes = {
+  router: React.PropTypes.object
+}
+
 export default StorePicker;
+
