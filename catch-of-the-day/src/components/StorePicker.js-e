@@ -11,7 +11,6 @@ class StorePicker extends React.Component {
         <input type="text" required placeholder='Store Name' />
         <button className="type">View Store -></button>
       </form>
-
       )
   }
 }
