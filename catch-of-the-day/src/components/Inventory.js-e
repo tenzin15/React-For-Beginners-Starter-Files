@@ -2,6 +2,12 @@ import React from 'react';
 import AddFishForm from './AddFishForm';
 
 class Inventory extends React.Component {
+  renderInventory(key) {
+    return (
+      <p>key</p>
+    )
+  }
+
   render() {
     return (
       <div>
